@@ -59,21 +59,12 @@ namespace AnimationApp
             Timer.Interval = 10;
             Timer.Enabled = true;
         }
-
-        private void Form1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        
+  
         private void OnTimedEvent()
         {
             // Считаем новые координаты 
             currentX += Step;
             currentY = Math.Sin(currentX);
-
-            
-            
 
             DrawRectangle();
         }
