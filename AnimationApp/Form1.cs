@@ -37,7 +37,6 @@ namespace AnimationApp
         public double Step { get; set; } = 0.05;
 
         public System.Timers.Timer Timer { get; set; } = new System.Timers.Timer();
-        public Graphics Graphics { get; set; }
         public Pen Pen { get; set; } = new Pen(Color.FromArgb(255, 0, 0, 0));
 
         public Form1()
@@ -50,9 +49,6 @@ namespace AnimationApp
 
             // Смещаем граф, чтобы фигура оказалась посередине формы
             ShiftY = Height / 2 - RectangleHeight / 2;
-
-            // Получаем ссылку на графику формы
-            Graphics = CreateGraphics();
 
             // Задаем таймер
             Timer.Elapsed += (sender, e) => OnTimedEvent();
