@@ -72,9 +72,8 @@ namespace AnimationApp
             currentX += Step;
             currentY = Math.Sin(currentX);
 
-            // Округляем результаты X по модулю размерности координатной доски, 
-            // чтобы фигура отрисовывалась в цикле и не уплывала за пределы формы
-            currentX %=  GraphWidth;
+            
+            
 
             DrawRectangle();
         }
@@ -85,7 +84,9 @@ namespace AnimationApp
             var g = CreateGraphics();
             g.Clear(Color.White);
             g.DrawRectangle(Pen, new Rectangle(
-                Convert.ToInt32(currentX * PixelMultiplierX + ShiftX), 
+                // Округляем результаты X по модулю размерности координатной доски, 
+                // чтобы фигура отрисовывалась в цикле и не уплывала за пределы формы
+                Convert.ToInt32(currentX % GraphWidth * PixelMultiplierX + ShiftX), 
                 Convert.ToInt32(currentY * PixelMultiplierY + ShiftY),
                 RectangleWidth,
                 RectangleHeight
